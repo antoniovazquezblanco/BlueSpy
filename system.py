@@ -5,6 +5,7 @@ This module contains functions to interact with system programs.
 """
 
 from typing import Callable, List
+from interface import log_debug
 import subprocess
 
 
@@ -25,7 +26,7 @@ def run_and_check(
     On exception, the output of the failed command is shown.
     """
     if verbose:
-        print("[C] " + " ".join(command))
+        log_debug(" ".join(command))
     output = subprocess.run(command, capture_output=True)
     out = output.stdout.decode("utf-8")
     if verbose:

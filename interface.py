@@ -38,6 +38,13 @@ def log(level: loglevel, msg: str):
     print(f"[{level[1]}{level[0]}{bcolors.ENDC}] {msg}")
 
 
+def log_debug(msg: str):
+    """
+    Print a debug string.
+    """
+    log(loglevel.DEBUG, msg)
+
+
 def log_info(msg: str):
     """
     Print an info string.
